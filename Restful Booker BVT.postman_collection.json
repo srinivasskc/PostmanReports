@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1c2e4b0b-57fb-4fba-9907-0e498d10501e",
+		"_postman_id": "c7ee20fa-b4ba-4886-a3d1-46c50671e885",
 		"name": "Restful Booker BVT",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -23,7 +23,8 @@
 									"    // See Chaijs docs for complete list of available assertions",
 									"    // https://www.chaijs.com/api/bdd",
 									"    pm.expect(jsonData).to.not.have.lengthOf(0);",
-									"});"
+									"});",
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -1173,11 +1174,6 @@
 					{
 						"key": "Content-Type",
 						"value": "application/json"
-					},
-					{
-						"key": "x-mock-response-name",
-						"value": "Auth Missing Token",
-						"type": "text"
 					}
 				],
 				"body": {
@@ -1194,70 +1190,7 @@
 					]
 				}
 			},
-			"response": [
-				{
-					"name": "Auth",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"password123\"\n}"
-						},
-						"url": {
-							"raw": "{{rb_url}}/auth",
-							"host": [
-								"{{rb_url}}"
-							],
-							"path": [
-								"auth"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": null,
-					"cookie": [],
-					"body": "{\n    \"token\": \"9ab063740d9d37f\"\n}"
-				},
-				{
-					"name": "Auth Missing Token",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"username\" : \"admin\",\n    \"password\" : \"password123\"\n}"
-						},
-						"url": {
-							"raw": "{{rb_url}}/auth",
-							"host": [
-								"{{rb_url}}"
-							],
-							"path": [
-								"auth"
-							]
-						}
-					},
-					"status": "Bad Request",
-					"code": 400,
-					"_postman_previewlanguage": "json",
-					"header": null,
-					"cookie": [],
-					"body": "{\n    \"token\": \"\"\n}"
-				}
-			]
+			"response": []
 		},
 		{
 			"name": "Delete Booking",
@@ -1408,6 +1341,32 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "rb_url",
+			"value": "https://restful-booker.herokuapp.com\n"
+		},
+		{
+			"key": "booking_id",
+			"value": ""
+		},
+		{
+			"key": "firstname",
+			"value": ""
+		},
+		{
+			"key": "lastname",
+			"value": ""
+		},
+		{
+			"key": "checkin",
+			"value": ""
+		},
+		{
+			"key": "checkout",
+			"value": ""
 		}
 	]
 }
